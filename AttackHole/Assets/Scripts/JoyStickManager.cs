@@ -6,15 +6,15 @@ public class JoyStickManager : MonoBehaviour
 {
     
     [SerializeField] private Vector2 JoystickSize = new Vector2(200, 200);
-    public JoyStick Joystick;
+    public JoyStick  Joystick;
     public NavMeshAgent playerNavMeshAgent;
     private Finger MovementFinger;
     public Vector2 MovementAmount;
-    public Animator playerAnimator;
+    //public Animator playerAnimator;
     void Start()
     {
         playerNavMeshAgent = GetComponent<NavMeshAgent>();
-        playerAnimator = GetComponent<Animator>();
+        //playerAnimator = GetComponent<Animator>();
     }
     
     
@@ -116,7 +116,7 @@ public class JoyStickManager : MonoBehaviour
         // print("MovementAmount.x: " + MovementAmount.x);
         // print("MovementAmount.y: " + MovementAmount.y);
         
-        playerAnimator.SetFloat("moveX", MovementAmount.x);
-        playerAnimator.SetFloat("moveZ", MovementAmount.y);
+        //playerAnimator.SetFloat("moveX", MovementAmount.x);
+        //playerAnimator.SetFloat("moveZ", MovementAmount.y);
     }
 }

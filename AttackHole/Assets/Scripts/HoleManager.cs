@@ -42,7 +42,7 @@ public class HoleManager : MonoBehaviour
 
             _holeSizeClass.size = holeTransform.localScale;
 
-            string SetToJson = JsonUtility.ToJson(_holeSizeClass.size);
+            string SetToJson = JsonUtility.ToJson(_holeSizeClass);
 
             PlayerPrefs.SetString("size",SetToJson);
         }
