@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class HoleManager : MonoBehaviour
 {
@@ -55,6 +56,11 @@ public class HoleManager : MonoBehaviour
             timer_txt.text = "00:"+remainTime;
             remainTime--;
 
+            if(remainTime <= 0f){
+                yield return new WaitForSecondsRealtime(2f);
+                SceneManager.LoadScene("Boss_Level");
+            }
+
             yield return new WaitForSecondsRealtime(1f);
         }
     }
@@ -64,6 +70,9 @@ public class HoleManager : MonoBehaviour
             progressBarCircle(20);
 
             other.gameObject.SetActive(false);
+        }
+        if(other.name.Contains("Bullet")){
+            PlayerPrefs.SetInt("RegularBullet", PlayerPrefs.GetInt("RegularBullet")+1);
         }
     }
 }
